@@ -1,33 +1,43 @@
-import { Box, Grid, Paper, Typography } from "@mui/material";
-import LocalBarIcon from "@mui/icons-material/LocalBar";
-
+import { Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
+import { homeSections } from "../utils";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Stack from "@mui/material/Stack";
 const HomeCard = () => {
   return (
-    <Grid item xs={12} sm={6} md={4}>
-      <Paper elevation={3}>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png"
-          alt=""
-          className="image"
-        />
-        <Box paddingX={2} paddingBottom={2}>
-          <Typography variant="h4" component="h2">
-            Cocktail 1
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-            }}
-          >
-            <LocalBarIcon />
-            <Typography variant="body2" component="p" paddingLeft={2}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-              doloribus optio ipsam, consequuntur voluptatum ad at fuga nulla
-            </Typography>
+    <>
+      {homeSections.map(({ id, title, image, text, btnText, btnUrl }) => {
+        return (
+          <Box key={id} paddingBottom="40px">
+            <Stack
+              direction={{ xs: "column", md: "row" }}
+              spacing={{ xs: 1, sm: 2, md: 4 }}
+            >
+              <Box>
+                <img src={image} alt={title} className="image-home" />
+              </Box>
+              <Box>
+                <Typography variant="h3" component="h3">
+                  {title}
+                </Typography>
+                <Typography variant="body1" component="p">
+                  {text}
+                </Typography>
+                <Button
+                  endIcon={<ArrowForwardIcon />}
+                  variant="contained"
+                  component={Link}
+                  to={btnUrl}
+                  sx={{ marginTop: "20px" }}
+                >
+                  {btnText}
+                </Button>
+              </Box>
+            </Stack>
           </Box>
-        </Box>
-      </Paper>
-    </Grid>
+        );
+      })}
+    </>
   );
 };
 

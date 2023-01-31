@@ -10,6 +10,25 @@ export const theme = createTheme({
           },
           style: {
             fontSize: 40,
+            fontWeight: 700,
+          },
+        },
+        {
+          props: {
+            variant: "h2",
+          },
+          style: {
+            fontSize: 32,
+            fontWeight: 700,
+          },
+        },
+        {
+          props: {
+            variant: "h3",
+          },
+          style: {
+            fontSize: 28,
+            fontWeight: 700,
           },
         },
         {
@@ -17,7 +36,7 @@ export const theme = createTheme({
             variant: "body1",
           },
           style: {
-            fontSize: 20,
+            fontSize: 18,
           },
         },
         {

@@ -1,13 +1,18 @@
-import { Grid } from "@mui/material";
 import HomeCard from "../components/HomeCard";
+import { Box } from "@mui/material";
+import HeroSection from "../components/HeroSection";
 
 const Home = () => {
   return (
-    <div>
-      <Grid container spacing={4}>
-        <HomeCard />
-      </Grid>
-    </div>
+    <Box>
+      <Box paddingBottom="30px">
+        <HeroSection
+          title="Wecome to WatchDrinkEat!"
+          text="Here you can find ideas for having fun at home"
+        />
+      </Box>
+      <HomeCard />
+    </Box>
   );
 };
 

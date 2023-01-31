@@ -1,7 +1,21 @@
-import React from "react";
+import { CocktailProvider } from "../cocktailContext";
+import CocktailsList from "../components/CocktailsList";
+import HeroSection from "../components/HeroSection";
+import SearchCocktailsForm from "../components/SearchCocktailsForm";
 
 const Cocktails = () => {
-  return <div>Cocktails</div>;
+  return (
+    <>
+      <HeroSection
+        title="Cocktails"
+        text="You can search your favorite one! Cheers!!!🍸"
+      />
+      <CocktailProvider>
+        <SearchCocktailsForm />
+        <CocktailsList />
+      </CocktailProvider>
+    </>
+  );
 };
 
 export default Cocktails;

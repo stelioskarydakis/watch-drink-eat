@@ -1,7 +1,38 @@
-import React from "react";
+import { Box, Skeleton, Stack } from "@mui/material";
 
 const Loading = () => {
-  return <div>Loading</div>;
+  return (
+    <>
+      <Stack
+        sx={{ flexWrap: "wrap" }}
+        alignItems="center"
+        justifyContent="center"
+        direction={{ xs: "column", sm: "row" }}
+      >
+        {[...Array(6)].map((_, i) => {
+          return (
+            <Box key={i} sx={{ margin: "10px" }}>
+              <Stack spacing={1}>
+                <Skeleton variant="rectangular" width={300} height={300} />
+                <Skeleton variant="text" sx={{ fontSize: "1rem" }} width={50} />
+                <Skeleton
+                  variant="text"
+                  sx={{ fontSize: "1rem" }}
+                  width={160}
+                />
+                <Skeleton
+                  variant="text"
+                  sx={{ fontSize: "0.5rem" }}
+                  width={120}
+                />
+                <Skeleton variant="rectangular" width={100} height={30} />
+              </Stack>
+            </Box>
+          );
+        })}
+      </Stack>
+    </>
+  );
 };
 
 export default Loading;

@@ -7,7 +7,13 @@ const HeroSection = ({ title, text }) => {
       <Typography variant="h1" component="h2">
         {title}
       </Typography>
-      <Typography variant="body1" component="p">
+      <Typography
+        variant="body1"
+        component="h2"
+        maxWidth="600px"
+        margin="0 auto"
+        paddingTop={1.5}
+      >
         {text}
       </Typography>
     </Box>

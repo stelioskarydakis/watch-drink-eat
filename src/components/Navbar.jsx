@@ -9,8 +9,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
+import HelpIcon from "@mui/icons-material/Help";
 import { menuItems } from "../utils";
 import { Link } from "react-router-dom";
 
@@ -29,12 +29,10 @@ function Navbar() {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <TagFacesIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
@@ -45,7 +43,7 @@ function Navbar() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            WatchDrinkEat
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -78,7 +76,7 @@ function Navbar() {
               }}
             >
               {menuItems.map((page) => (
-                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                <MenuItem key={page.url} onClick={handleCloseNavMenu}>
                   <Button
                     key={page}
                     onClick={handleCloseNavMenu}
@@ -97,16 +95,16 @@ function Navbar() {
             variant="h5"
             noWrap
             component="a"
-            href=""
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
               flexGrow: 1,
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: { xs: "0.9", sm: ".3rem" },
               color: "inherit",
               textDecoration: "none",
+              fontSize: { xs: "15px", sm: "18px" },
             }}
           >
             WatchDrinkEat
@@ -114,7 +112,7 @@ function Navbar() {
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {menuItems.map((page) => (
               <Button
-                key={page}
+                key={page.url}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
                 component={Link}
@@ -124,6 +122,10 @@ function Navbar() {
               </Button>
             ))}
           </Box>
+
+          <Link to="/about" color="white">
+            <HelpIcon sx={{ color: "white" }} />
+          </Link>
         </Toolbar>
       </Container>
     </AppBar>
