@@ -1,7 +1,8 @@
 import React from "react";
+import { MoviesProvider } from "../moviesContext";
 
 const Movies = () => {
-  return <div>Movies</div>;
+  return <MoviesProvider>Movies</MoviesProvider>;
 };
 
 export default Movies;
