@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import { Container } from "@mui/system";
-import { primary } from "@mui/material/colors";
 const Footer = () => {
   return (
     <Box

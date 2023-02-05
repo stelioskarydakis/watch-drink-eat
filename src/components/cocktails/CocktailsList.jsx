@@ -1,14 +1,17 @@
-import { useCocktailContext } from "../cocktailContext";
-import Loading from "./Loading";
+import { useCocktailContext } from "../../cocktailContext";
+import Loading from "../Loading";
 import CocktailCard from "./CocktailCard";
-import NothingFound from "./NothingFound";
+import NothingFound from "../NothingFound";
 import { Stack } from "@mui/material";
 
 const CocktailsList = () => {
   const { cocktails, loading } = useCocktailContext();
 
   if (loading) return <Loading />;
-  if (cocktails.length < 1) return <NothingFound />;
+  if (cocktails.length < 1)
+    return (
+      <NothingFound title="Nothing match your search, please try again." />
+    );
   return (
     <Stack
       direction="row"

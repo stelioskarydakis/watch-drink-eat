@@ -1,7 +1,7 @@
 import { CocktailProvider } from "../cocktailContext";
-import CocktailsList from "../components/CocktailsList";
+import CocktailsList from "../components/cocktails/CocktailsList";
 import HeroSection from "../components/HeroSection";
-import SearchCocktailsForm from "../components/SearchCocktailsForm";
+import SearchCocktailsForm from "../components/cocktails/SearchCocktailsForm";
 
 const Cocktails = () => {
   return (

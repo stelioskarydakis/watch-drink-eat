@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import React, { useEffect, useRef } from "react";
-import { useCocktailContext } from "../cocktailContext";
+import { useCocktailContext } from "../../cocktailContext";
 
 const SearchCocktailsForm = () => {
   const { setSearchTerm } = useCocktailContext();
