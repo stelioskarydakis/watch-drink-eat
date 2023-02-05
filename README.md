@@ -1,6 +1,6 @@
 # Visit site at
 
-https://watch-drink-eat.netlify.app/about
+[watch-drink-eat](https://watch-drink-eat.netlify.app).
 
 # Getting Started with Create React App
 
